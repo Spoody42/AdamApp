@@ -29,8 +29,8 @@ namespace AdamApp
         /// <summary>
         /// FillCbxGame combo-boxc with available Games from String array
         /// a) Declare Array of available Games,
-        /// b) clear existing CBXGame combo-box Items
-        /// c) Add each game in array tp CbxGame Items
+        /// b) clear existing CbxGame combo-box Items
+        /// c) Add each game in array to CbxGame Items
         /// </summary>
         
         public void FillCbxGame()
