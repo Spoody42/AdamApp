@@ -79,11 +79,15 @@ namespace AdamApp
 
         private void DisplayGameResult(string gameName, string feedback)
         {
-            string[] row = { GameName, Program.PlayerScore.ToString(), Program.ComputerScore.ToString(), Program.Winner };
-            var listViewItem = new ListViewItem(row);
-            LsvGameStatistics.Items.Add(listViewItem);
-
-            MessageBox.Show(feedback, $"{gameName} Result");
+            if (gameName != "Blackjack")
+            {
+                string[] row = { GameName, Program.PlayerScore.ToString(), Program.ComputerScore.ToString(), Program.Winner };
+                var listViewItem = new ListViewItem(row);
+                LsvGameStatistics.Items.Add(listViewItem);
+                MessageBox.Show(feedback, $"{gameName} Result");
+            } else
+            MessageBox.Show(feedback, $"{gameName} Next Step");
+        
         } // end of DisplayOverallGameResult
 
 
@@ -133,6 +137,8 @@ namespace AdamApp
                         feedback = Program.PlayTwentySidedDiceGame(); break; // c
                     case "High Card Wins":
                         feedback = PlayHighCardWinsGame(); break; // d
+                    case "Blackjack":
+                        feedback = PlayBlackjackGame(); break; // e
 
                     default:
                         MessageBox.Show("Game not implemented", "Error"); // e
@@ -167,7 +173,50 @@ namespace AdamApp
 
         }// end of PlayingHighCardGame
 
+        Hand ComputerHand = null; // 2a
+        Hand PlayerHand = null; // 2b
+
+        public void DealaPlayerCard() // 2c
+        {
+            if (mainDeck == null)
+                mainDeck = new Deck();  // 1
+            if (PlayerHand == null)
+                PlayerHand = new Hand();    // 2
+
+            PlayingCard playerCard = mainDeck.Deal(); // 3
+            PlayerHand.AddCardToHand(playerCard);     // 4
+            DisplayPlayerCard(playerCard);            // 5
+        }
+
+        private void DisplayPlayerCard(PlayingCard card)  // moved
+        {
+            try
+            {
+                LsvPlayerHand.Items.Add(new ListViewItem(new[] { card.Face.ToString(), card.Suit.ToString() }));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Display Card Error");
+            }
+        } // end DisplayPlayerCard
+
+        public string PlayBlackjackGame() // 2d
+        {
+            DealaPlayerCard();
+            DealaPlayerCard();
+
+            LblPlayerScore = PlayerHand.GetHandValue;           // 2
+            LblPlayerScore.Text = LblPlayerScore.ToString();     // 3
+            return "Select Hit or Stand";
+        }
  
+        private void BtnHit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+        }
 
     } // END OF CODE
 }

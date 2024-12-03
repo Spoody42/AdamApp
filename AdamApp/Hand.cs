@@ -41,7 +41,35 @@ namespace AdamApp
 
         public int GetHandValue() // f
         {
+            var cardValue = 0;
+            var handValue = 0;
+            var aceCount = 0;
 
+            for (int ptr = 0; ptr < _Cards.Count; ptr++) // 1
+            {
+                if (_Cards[ptr].Value > 10) // a
+                {
+                    handValue = handValue + 10;
+                }
+                else if (_Cards[ptr].Face == "Ace") // 1b
+                {
+                    cardValue = cardValue + 11;
+                    aceCount = (aceCount + 1);
+                }
+
+                handValue = handValue + cardValue;
+
+                while((handValue > 21 && (aceCount > 0))) // 2
+                {
+                    handValue = handValue - 10;
+                    aceCount = aceCount - 1;
+                }
+
+                return handValue;
+                // end of GetHandValue
+                
+                
+            }
         }
     }
 }
