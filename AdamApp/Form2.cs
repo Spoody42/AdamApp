@@ -82,7 +82,7 @@ namespace AdamApp
             if (gameName != "Blackjack")
             {
                 string[] row = { GameName, Program.PlayerScore.ToString(), Program.ComputerScore.ToString(), Program.Winner };
-                int listViewItem = new ListViewItem(row);
+                var listViewItem = new ListViewItem(row);
                 LsvGameStatistics.Items.Add(listViewItem);
                 MessageBox.Show(feedback, $"{gameName} Result");
             } else
@@ -194,7 +194,17 @@ namespace AdamApp
             PlayerHand.AddCardToHand(playerCard);     // 4
             DisplayPlayerCard(playerCard);            // 5
         }
+        public void DealaComputerCard() // 2c
+        {
+            if (mainDeck == null)
+                mainDeck = new Deck();  // 1
+            if (ComputerHand == null)
+                ComputerHand = new Hand();    // 2
 
+            PlayingCard playerCard = mainDeck.Deal(); // 3
+            ComputerHand.AddCardToHand(playerCard);     // 4
+            DisplayComputerCard(playerCard);            // 5
+        }
         private void DisplayPlayerCard(PlayingCard card)  // moved
         {
             try
@@ -207,6 +217,17 @@ namespace AdamApp
             }
         } // end DisplayPlayerCard
 
+        private void DisplayComputerCard(PlayingCard card)  // moved
+        {
+            try
+            {
+                LsvComputerHand.Items.Add(new ListViewItem(new[] { card.Face.ToString(), card.Suit.ToString() }));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Display Card Error");
+            }
+        } // end DisplayPlayerCard
         public string PlayBlackjackGame() // 2d
         {
             DealaPlayerCard();
@@ -238,8 +259,8 @@ namespace AdamApp
             {
                 DealaComputerHand();    // 1
                 feedback = FindBlackjackGameWinner(); // 2
-                DisplayGameResult(feedback);        // 3
-                Lbl
+                DisplayGameResult("Blackjack", feedback);        // 3
+               
             }
             catch (Exception ex)
             {
@@ -247,21 +268,24 @@ namespace AdamApp
             }
         } // end BtnStand_Click
 
+        private void DealaComputerHand()
+        {
+            throw new NotImplementedException();
+        }
+
         private string FindBlackjackGameWinner()
         {
             string feedback = "";
-            if (PlayerHand > ComputerHand)
+            if ((Program.PlayerScore > Program.ComputerScore))
             {
                 feedback = $"{Program.PlayerName} loses because {Program.PlayerName} is lower than Computer";
             }
-            else if (PlayerHand <= 21 Computer > 21)
+            else if ((Program.PlayerScore <= 21) && (Program.ComputerScore > 21))
             {
                 feedback = $"{Program.PlayerName} wins because have a higher number than Computer";
             }
-            else if
-            {
-
-            }
+            
+          
             return feedback;
         } // end FindBlackjackGameWinner
 

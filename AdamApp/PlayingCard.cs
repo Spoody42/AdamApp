@@ -12,7 +12,7 @@ namespace AdamApp
         static public string[] Faces = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" }; // a
         public String Suit { get; set; } // b
         public string Face { get; set; }
-        public int Value { get; set; } 
+        public int Value { get; set; }
         public PlayingCard(String inSuit, String inFace) // c
         {
             Suit = inSuit;
@@ -33,14 +33,13 @@ namespace AdamApp
                 case "Queen": Value = 10; break;
                 case "King": Value = 10; break;
 
-                    default: Value = 10; break;
-            } // end of PlayingCard constructor method
+                default: Value = 10; break;
+            } 
+        } // end of PlayingCard constructor method
 
-
-            public override string ToString()
+        public override string ToString()
         {
             return $"Suit {Suit} Face {Face} Value {Value}";
         }
-    }
     }
  } // end of the world
