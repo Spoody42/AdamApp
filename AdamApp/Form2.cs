@@ -82,7 +82,7 @@ namespace AdamApp
             if (gameName != "Blackjack")
             {
                 string[] row = { GameName, Program.PlayerScore.ToString(), Program.ComputerScore.ToString(), Program.Winner };
-                var listViewItem = new ListViewItem(row);
+                int listViewItem = new ListViewItem(row);
                 LsvGameStatistics.Items.Add(listViewItem);
                 MessageBox.Show(feedback, $"{gameName} Result");
             } else
@@ -176,6 +176,13 @@ namespace AdamApp
         Hand ComputerHand = null; // 2a
         Hand PlayerHand = null; // 2b
 
+        /// <summary>
+        /// 1) This is the deck class being used for a new deck
+        /// 2) This is the player hand being added for a new hand
+        /// 3) 
+        /// </summary>
+
+
         public void DealaPlayerCard() // 2c
         {
             if (mainDeck == null)
@@ -205,8 +212,8 @@ namespace AdamApp
             DealaPlayerCard();
             DealaPlayerCard();
 
-            LblPlayerScore = PlayerHand.GetHandValue;           // 2
-            LblPlayerScore.Text = LblPlayerScore.ToString();     // 3
+            Program.PlayerScore = PlayerHand.GetHandValue();           // 2
+            LblPlayerScore.Text = Program.PlayerScore.ToString();     // 3
             return "Select Hit or Stand";
         }
  
@@ -214,9 +221,49 @@ namespace AdamApp
         {
             try
             {
-
+                DealaPlayerCard();
+                Program.PlayerScore = PlayerHand.GetHandValue();           // 2
+                LblPlayerScore.Text = Program.PlayerScore.ToString();     // 3
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Display BtnHit Error");
             }
         }
+
+        private void BtnStand_Click(object sender, EventArgs e)
+        {
+            string feedback = "";
+            try
+            {
+                DealaComputerHand();    // 1
+                feedback = FindBlackjackGameWinner(); // 2
+                DisplayGameResult(feedback);        // 3
+                Lbl
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Stand Error");
+            }
+        } // end BtnStand_Click
+
+        private string FindBlackjackGameWinner()
+        {
+            string feedback = "";
+            if (PlayerHand > ComputerHand)
+            {
+                feedback = $"{Program.PlayerName} loses because {Program.PlayerName} is lower than Computer";
+            }
+            else if (PlayerHand <= 21 Computer > 21)
+            {
+                feedback = $"{Program.PlayerName} wins because have a higher number than Computer";
+            }
+            else if
+            {
+
+            }
+            return feedback;
+        } // end FindBlackjackGameWinner
 
     } // END OF CODE
 }

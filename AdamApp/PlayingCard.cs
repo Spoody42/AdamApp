@@ -36,7 +36,11 @@ namespace AdamApp
                     default: Value = 10; break;
             } // end of PlayingCard constructor method
 
-            
+
+            public override string ToString()
+        {
+            return $"Suit {Suit} Face {Face} Value {Value}";
         }
     }
-}
+    }
+ } // end of the world

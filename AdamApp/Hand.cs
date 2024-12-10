@@ -58,18 +58,17 @@ namespace AdamApp
                 }
 
                 handValue = handValue + cardValue;
-
-                while((handValue > 21 && (aceCount > 0))) // 2
-                {
-                    handValue = handValue - 10;
-                    aceCount = aceCount - 1;
-                }
-
-                return handValue;
-                // end of GetHandValue
-                
-                
             }
-        }
-    }
+            while((handValue > 21 && (aceCount > 0))) // 2
+            {
+                handValue = handValue - 10;
+                aceCount = aceCount - 1;
+            }
+
+            return handValue;
+        }// end of GetHandValue
+
+
+
+    } // end of Class
 }
