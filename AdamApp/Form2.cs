@@ -194,7 +194,7 @@ namespace AdamApp
             PlayerHand.AddCardToHand(playerCard);     // 4
             DisplayPlayerCard(playerCard);            // 5
         }
-        public void DealaComputerCard() // 2c
+        public void DealaComputerHand() // 2c
         {
             if (mainDeck == null)
                 mainDeck = new Deck();  // 1
@@ -240,54 +240,72 @@ namespace AdamApp
  
         private void BtnHit_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void BtnStand_Click(object sender, EventArgs e)
+        {
+           
+        } // end BtnStand_Click
+
+     
+
+        private string FindBlackjackGameWinner()
+        {
+            string feedback = "";
+           
+            if ((Program.PlayerScore <= 21) && (Program.ComputerScore > 21))
+            {
+                feedback = $"{Program.PlayerName}  wins because {Program.PlayerScore} as  computer is bust with over {Program.ComputerScore}";
+            }
+            else if ((Program.PlayerScore > 21) && (Program.ComputerScore <= 21))
+            {
+                feedback = $"Computer wins with {Program.ComputerScore} as  {Program.PlayerName} is bust with over {Program.PlayerScore}";
+            }
+            else if (Program.PlayerScore > Program.ComputerScore)
+            {
+                feedback = $"{Program.PlayerName} wins because {Program.PlayerScore} is higher than {Program.ComputerScore}";
+               
+            }
+            //  else if (())
+
+
+            return feedback;
+        } // end FindBlackjackGameWinner
+
+        private void BtnHit_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 DealaPlayerCard();
                 Program.PlayerScore = PlayerHand.GetHandValue();           // 2
                 LblPlayerScore.Text = Program.PlayerScore.ToString();     // 3
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Display BtnHit Error");
             }
         }
 
-        private void BtnStand_Click(object sender, EventArgs e)
+        private void BtnStand_Click_1(object sender, EventArgs e)
         {
             string feedback = "";
             try
             {
-                DealaComputerHand();    // 1
+                while(Program.ComputerScore <=16)
+                {
+                    DealaComputerHand();    // 1
+                    Program.ComputerScore = ComputerHand.GetHandValue();           // 2
+                    LblComputerScore.Text = Program.ComputerScore.ToString();     // 3
+                }
+
                 feedback = FindBlackjackGameWinner(); // 2
                 DisplayGameResult("Blackjack", feedback);        // 3
-               
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Stand Error");
             }
-        } // end BtnStand_Click
-
-        private void DealaComputerHand()
-        {
-            throw new NotImplementedException();
         }
-
-        private string FindBlackjackGameWinner()
-        {
-            string feedback = "";
-            if ((Program.PlayerScore > Program.ComputerScore))
-            {
-                feedback = $"{Program.PlayerName} loses because {Program.PlayerName} is lower than Computer";
-            }
-            else if ((Program.PlayerScore <= 21) && (Program.ComputerScore > 21))
-            {
-                feedback = $"{Program.PlayerName} wins because have a higher number than Computer";
-            }
-            
-          
-            return feedback;
-        } // end FindBlackjackGameWinner
-
     } // END OF CODE
 }

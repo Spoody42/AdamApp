@@ -208,6 +208,7 @@
             this.BtnHit.TabIndex = 24;
             this.BtnHit.Text = "Hit";
             this.BtnHit.UseVisualStyleBackColor = true;
+            this.BtnHit.Click += new System.EventHandler(this.BtnHit_Click_1);
             // 
             // BtnStand
             // 
@@ -218,6 +219,7 @@
             this.BtnStand.TabIndex = 25;
             this.BtnStand.Text = "Stand";
             this.BtnStand.UseVisualStyleBackColor = true;
+            this.BtnStand.Click += new System.EventHandler(this.BtnStand_Click_1);
             // 
             // LsvPlayerHand
             // 
@@ -231,7 +233,7 @@
             this.LsvPlayerHand.Size = new System.Drawing.Size(258, 150);
             this.LsvPlayerHand.TabIndex = 26;
             this.LsvPlayerHand.UseCompatibleStateImageBehavior = false;
-            this.LsvPlayerHand.View = System.Windows.Forms.View.Details;            
+            this.LsvPlayerHand.View = System.Windows.Forms.View.Details;
             // 
             // columnheader
             // 

@@ -49,13 +49,15 @@ namespace AdamApp
             {
                 if (_Cards[ptr].Value > 10) // a
                 {
-                    handValue = handValue + 10;
+                    cardValue = 10;
                 }
                 else if (_Cards[ptr].Face == "Ace") // 1b
                 {
                     cardValue = cardValue + 11;
                     aceCount = (aceCount + 1);
                 }
+                else
+                    cardValue = _Cards[ptr].Value;
 
                 handValue = handValue + cardValue;
             }
