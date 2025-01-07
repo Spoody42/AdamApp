@@ -30,10 +30,10 @@
         {
             this.Title = new System.Windows.Forms.Label();
             this.LsvGameStatistics = new System.Windows.Forms.ListView();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LblPlayerScore = new System.Windows.Forms.Label();
             this.LblComputerScore = new System.Windows.Forms.Label();
             this.BtnFindOverallWinner = new System.Windows.Forms.Button();
@@ -66,43 +66,46 @@
             this.Title.Size = new System.Drawing.Size(127, 29);
             this.Title.TabIndex = 23;
             this.Title.Text = "Game App";
+            this.Title.UseWaitCursor = true;
             // 
             // LsvGameStatistics
             // 
             this.LsvGameStatistics.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader8,
+            this.columnHeader9,
             this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader2});
             this.LsvGameStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LsvGameStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LsvGameStatistics.GridLines = true;
             this.LsvGameStatistics.HideSelection = false;
-            this.LsvGameStatistics.Location = new System.Drawing.Point(33, 425);
+            this.LsvGameStatistics.Location = new System.Drawing.Point(17, 419);
             this.LsvGameStatistics.Name = "LsvGameStatistics";
-            this.LsvGameStatistics.Size = new System.Drawing.Size(665, 212);
+            this.LsvGameStatistics.Size = new System.Drawing.Size(705, 184);
             this.LsvGameStatistics.TabIndex = 22;
             this.LsvGameStatistics.UseCompatibleStateImageBehavior = false;
+            this.LsvGameStatistics.UseWaitCursor = true;
             this.LsvGameStatistics.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "GameName";
+            this.columnHeader8.Width = 196;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "PlayerScore";
+            this.columnHeader9.Width = 177;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Game Name";
-            this.columnHeader1.Width = 165;
+            this.columnHeader1.Text = "ComputerScore";
+            this.columnHeader1.Width = 211;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Player Score";
-            this.columnHeader2.Width = 184;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Computer Score";
-            this.columnHeader3.Width = 209;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Winner";
-            this.columnHeader4.Width = 104;
+            this.columnHeader2.Text = "Winner";
+            this.columnHeader2.Width = 505;
             // 
             // LblPlayerScore
             // 
@@ -113,6 +116,7 @@
             this.LblPlayerScore.Size = new System.Drawing.Size(20, 24);
             this.LblPlayerScore.TabIndex = 21;
             this.LblPlayerScore.Text = "0";
+            this.LblPlayerScore.UseWaitCursor = true;
             // 
             // LblComputerScore
             // 
@@ -123,16 +127,18 @@
             this.LblComputerScore.Size = new System.Drawing.Size(20, 24);
             this.LblComputerScore.TabIndex = 20;
             this.LblComputerScore.Text = "0";
+            this.LblComputerScore.UseWaitCursor = true;
             // 
             // BtnFindOverallWinner
             // 
             this.BtnFindOverallWinner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFindOverallWinner.Location = new System.Drawing.Point(721, 524);
+            this.BtnFindOverallWinner.Location = new System.Drawing.Point(733, 522);
             this.BtnFindOverallWinner.Name = "BtnFindOverallWinner";
             this.BtnFindOverallWinner.Size = new System.Drawing.Size(234, 51);
             this.BtnFindOverallWinner.TabIndex = 19;
             this.BtnFindOverallWinner.Text = "Find Overall Winner";
             this.BtnFindOverallWinner.UseVisualStyleBackColor = true;
+            this.BtnFindOverallWinner.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -143,6 +149,7 @@
             this.label4.Size = new System.Drawing.Size(117, 24);
             this.label4.TabIndex = 18;
             this.label4.Text = "Player Score";
+            this.label4.UseWaitCursor = true;
             // 
             // label3
             // 
@@ -153,6 +160,7 @@
             this.label3.Size = new System.Drawing.Size(148, 24);
             this.label3.TabIndex = 17;
             this.label3.Text = "Computer Score";
+            this.label3.UseWaitCursor = true;
             // 
             // CbxGame
             // 
@@ -161,6 +169,7 @@
             this.CbxGame.Name = "CbxGame";
             this.CbxGame.Size = new System.Drawing.Size(196, 21);
             this.CbxGame.TabIndex = 16;
+            this.CbxGame.UseWaitCursor = true;
             // 
             // TbxPlayerName
             // 
@@ -168,6 +177,7 @@
             this.TbxPlayerName.Name = "TbxPlayerName";
             this.TbxPlayerName.Size = new System.Drawing.Size(196, 20);
             this.TbxPlayerName.TabIndex = 15;
+            this.TbxPlayerName.UseWaitCursor = true;
             // 
             // label2
             // 
@@ -178,6 +188,7 @@
             this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 14;
             this.label2.Text = "Pick Game";
+            this.label2.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -188,6 +199,7 @@
             this.label1.Size = new System.Drawing.Size(125, 25);
             this.label1.TabIndex = 13;
             this.label1.Text = "Enter Name";
+            this.label1.UseWaitCursor = true;
             // 
             // BtnPlayGame
             // 
@@ -198,6 +210,7 @@
             this.BtnPlayGame.TabIndex = 12;
             this.BtnPlayGame.Text = "Play Game";
             this.BtnPlayGame.UseVisualStyleBackColor = true;
+            this.BtnPlayGame.UseWaitCursor = true;
             // 
             // BtnHit
             // 
@@ -208,6 +221,7 @@
             this.BtnHit.TabIndex = 24;
             this.BtnHit.Text = "Hit";
             this.BtnHit.UseVisualStyleBackColor = true;
+            this.BtnHit.UseWaitCursor = true;
             this.BtnHit.Click += new System.EventHandler(this.BtnHit_Click_1);
             // 
             // BtnStand
@@ -219,6 +233,7 @@
             this.BtnStand.TabIndex = 25;
             this.BtnStand.Text = "Stand";
             this.BtnStand.UseVisualStyleBackColor = true;
+            this.BtnStand.UseWaitCursor = true;
             this.BtnStand.Click += new System.EventHandler(this.BtnStand_Click_1);
             // 
             // LsvPlayerHand
@@ -233,6 +248,7 @@
             this.LsvPlayerHand.Size = new System.Drawing.Size(258, 150);
             this.LsvPlayerHand.TabIndex = 26;
             this.LsvPlayerHand.UseCompatibleStateImageBehavior = false;
+            this.LsvPlayerHand.UseWaitCursor = true;
             this.LsvPlayerHand.View = System.Windows.Forms.View.Details;
             // 
             // columnheader
@@ -253,6 +269,7 @@
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 28;
             this.label5.Text = "Player\'s Hand";
+            this.label5.UseWaitCursor = true;
             // 
             // label6
             // 
@@ -262,6 +279,7 @@
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 29;
             this.label6.Text = "Computer Hand";
+            this.label6.UseWaitCursor = true;
             // 
             // LsvComputerHand
             // 
@@ -275,6 +293,7 @@
             this.LsvComputerHand.Size = new System.Drawing.Size(271, 150);
             this.LsvComputerHand.TabIndex = 30;
             this.LsvComputerHand.UseCompatibleStateImageBehavior = false;
+            this.LsvComputerHand.UseWaitCursor = true;
             this.LsvComputerHand.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader6
@@ -296,6 +315,7 @@
             this.label7.Size = new System.Drawing.Size(104, 25);
             this.label7.TabIndex = 31;
             this.label7.Text = "Blackjack";
+            this.label7.UseWaitCursor = true;
             // 
             // Form2
             // 
@@ -323,6 +343,7 @@
             this.Controls.Add(this.BtnPlayGame);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -333,10 +354,6 @@
 
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.ListView LsvGameStatistics;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label LblPlayerScore;
         private System.Windows.Forms.Label LblComputerScore;
         private System.Windows.Forms.Button BtnFindOverallWinner;
@@ -358,5 +375,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

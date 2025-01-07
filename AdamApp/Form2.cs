@@ -88,7 +88,7 @@ namespace AdamApp
             } else
             MessageBox.Show(feedback, $"{gameName} Next Step");
         
-        } // end of DisplayOverallGameResult
+        } // end of DisplayGameResult
 
 
         // Global Variables
@@ -118,7 +118,7 @@ namespace AdamApp
                 result = $"Draw as both won {computerWins} games";
 
             MessageBox.Show(result, "Overall Result");
-        } //  endd of DisplayOverallGameResult
+        } //  end of DisplayOverallGameResult
 
         public void PlayGame(string gameName)
         {
@@ -230,6 +230,7 @@ namespace AdamApp
         } // end DisplayPlayerCard
         public string PlayBlackjackGame() // 2d
         {
+            ResetBlackjackInterface();
             DealaPlayerCard();
             DealaPlayerCard();
 
@@ -237,26 +238,31 @@ namespace AdamApp
             LblPlayerScore.Text = Program.PlayerScore.ToString();     // 3
             return "Select Hit or Stand";
         }
- 
-        private void BtnHit_Click(object sender, EventArgs e)
+
+        private void ResetBlackjackInterface()
         {
-           
+            LsvComputerHand.Items.Clear();
+            LsvPlayerHand.Items.Clear();
+
+            if (PlayerHand != null)
+            {
+                PlayerHand.Cards.Clear();
+                ComputerHand.Cards.Clear();
+            }
+            Program.PlayerScore = 0;
+            Program.ComputerScore = 0;
+            LblPlayerScore.Text = Program.PlayerScore.ToString(); ;
+
+            LblComputerScore.Text = Program.ComputerScore.ToString();
         }
-
-        private void BtnStand_Click(object sender, EventArgs e)
-        {
-           
-        } // end BtnStand_Click
-
-     
 
         private string FindBlackjackGameWinner()
         {
             string feedback = "";
-           
+
             if ((Program.PlayerScore <= 21) && (Program.ComputerScore > 21))
             {
-                feedback = $"{Program.PlayerName}  wins because {Program.PlayerScore} as  computer is bust with over {Program.ComputerScore}";
+                feedback = $"{Program.PlayerName} wins because {Program.PlayerScore} as  computer is bust with over {Program.ComputerScore}";
             }
             else if ((Program.PlayerScore > 21) && (Program.ComputerScore <= 21))
             {
@@ -265,10 +271,17 @@ namespace AdamApp
             else if (Program.PlayerScore > Program.ComputerScore)
             {
                 feedback = $"{Program.PlayerName} wins because {Program.PlayerScore} is higher than {Program.ComputerScore}";
-               
+            }
+            else if (Program.PlayerScore > 21 && Program.ComputerScore > 21)
+            {
+                feedback = $"Both {Program.PlayerName} and Computer are bust";
+            }else
+            {
+                feedback = $"Both {Program.PlayerName} and Computer have drawed";
             }
             //  else if (())
-
+            
+            
 
             return feedback;
         } // end FindBlackjackGameWinner
@@ -276,10 +289,14 @@ namespace AdamApp
         private void BtnHit_Click_1(object sender, EventArgs e)
         {
             try
-            {
+            {   
                 DealaPlayerCard();
                 Program.PlayerScore = PlayerHand.GetHandValue();           // 2
                 LblPlayerScore.Text = Program.PlayerScore.ToString();     // 3
+                if (Program.PlayerScore >= 21)
+                {
+                    BtnStand_Click_1(BtnStand, e);
+                }
             }
             catch (Exception ex)
             {
@@ -307,5 +324,7 @@ namespace AdamApp
                 MessageBox.Show(ex.Message, "Stand Error");
             }
         }
+
+      
     } // END OF CODE
 }
