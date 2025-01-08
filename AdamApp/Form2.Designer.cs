@@ -336,23 +336,28 @@
             this.LsvResults.Size = new System.Drawing.Size(697, 200);
             this.LsvResults.TabIndex = 32;
             this.LsvResults.UseCompatibleStateImageBehavior = false;
+            this.LsvResults.UseWaitCursor = true;
             this.LsvResults.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "a";
+            this.columnHeader3.Text = "GameName";
+            this.columnHeader3.Width = 143;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "b";
+            this.columnHeader4.Text = "PlayerScore";
+            this.columnHeader4.Width = 163;
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "c";
+            this.columnHeader10.Text = "ComputerScore";
+            this.columnHeader10.Width = 167;
             // 
             // columnHeader11
             // 
-            this.columnHeader11.Text = "d";
+            this.columnHeader11.Text = "Winner";
+            this.columnHeader11.Width = 272;
             // 
             // Form2
             // 
