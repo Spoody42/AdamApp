@@ -83,7 +83,8 @@ namespace AdamApp
             {
                 string[] row = { GameName, Program.PlayerScore.ToString(), Program.ComputerScore.ToString(), Program.Winner };
                 var listViewItem = new ListViewItem(row);
-                LsvGameStatistics.Items.Add(listViewItem);
+             //   LsvGameStatistics.Items.Add(listViewItem);
+                LsvResults.Items.Add(listViewItem);
                 MessageBox.Show(feedback, $"{gameName} Result");
             } else
             MessageBox.Show(feedback, $"{gameName} Next Step");
@@ -99,9 +100,9 @@ namespace AdamApp
             int computerWins = 0;
             string result = "";
 
-            int numOfGames = LsvGameStatistics.Items.Count;
+            int numOfGames = LsvResults.Items.Count;
 
-            foreach (ListViewItem element in LsvGameStatistics.Items)
+            foreach (ListViewItem element in LsvResults.Items)
             {
                 result = element.SubItems[3].Text;
 

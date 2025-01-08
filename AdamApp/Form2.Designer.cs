@@ -55,6 +55,11 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label7 = new System.Windows.Forms.Label();
+            this.LsvResults = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // Title
@@ -70,22 +75,22 @@
             // 
             // LsvGameStatistics
             // 
+            this.LsvGameStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.LsvGameStatistics.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader1,
             this.columnHeader2});
             this.LsvGameStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LsvGameStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LsvGameStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.LsvGameStatistics.GridLines = true;
             this.LsvGameStatistics.HideSelection = false;
-            this.LsvGameStatistics.Location = new System.Drawing.Point(17, 419);
+            this.LsvGameStatistics.Location = new System.Drawing.Point(810, 642);
             this.LsvGameStatistics.Name = "LsvGameStatistics";
-            this.LsvGameStatistics.Size = new System.Drawing.Size(705, 184);
+            this.LsvGameStatistics.Size = new System.Drawing.Size(137, 36);
             this.LsvGameStatistics.TabIndex = 22;
             this.LsvGameStatistics.UseCompatibleStateImageBehavior = false;
             this.LsvGameStatistics.UseWaitCursor = true;
-            this.LsvGameStatistics.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader8
             // 
@@ -317,11 +322,44 @@
             this.label7.Text = "Blackjack";
             this.label7.UseWaitCursor = true;
             // 
+            // LsvResults
+            // 
+            this.LsvResults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.LsvResults.GridLines = true;
+            this.LsvResults.HideSelection = false;
+            this.LsvResults.Location = new System.Drawing.Point(12, 426);
+            this.LsvResults.Name = "LsvResults";
+            this.LsvResults.Size = new System.Drawing.Size(697, 200);
+            this.LsvResults.TabIndex = 32;
+            this.LsvResults.UseCompatibleStateImageBehavior = false;
+            this.LsvResults.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "a";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "b";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "c";
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "d";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 649);
+            this.ClientSize = new System.Drawing.Size(979, 628);
+            this.Controls.Add(this.LsvResults);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.LsvComputerHand);
             this.Controls.Add(this.label6);
@@ -379,5 +417,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ListView LsvResults;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }

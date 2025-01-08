@@ -213,7 +213,7 @@ namespace AdamApp
             if (PlayerScore == ComputerScore)
             {
                 feedback = $"Draw as{PlayerScore} was equal to {ComputerScore}";
-             // Winner = "Draw";
+                Winner = "Draw";
             }
             else if (PlayerScore > ComputerScore)
             {
@@ -223,6 +223,7 @@ namespace AdamApp
             else if (ComputerScore > PlayerScore)
             {
                 feedback = $"Computer wins as your score {PlayerScore} is lower than {ComputerScore}";
+                Winner = "Computer";
             }
             return feedback + "\n\n";
         } // end of FindGameWinner
