@@ -119,6 +119,7 @@ namespace AdamApp
                 result = $"Draw as both won {computerWins} games";
 
             MessageBox.Show(result, "Overall Result");
+            ResetInterface();
         } //  end of DisplayOverallGameResult
 
         public void PlayGame(string gameName)
