@@ -160,7 +160,7 @@ namespace AdamApp
         // Playing Card Games
         Deck mainDeck = null; // new
 
-        private string PlayHighCardWinsGame()
+        private string PlayHighCardWinsGame       ()
         {
             if (mainDeck == null) mainDeck = new Deck(); // 1
 
